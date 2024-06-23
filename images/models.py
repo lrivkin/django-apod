@@ -1,6 +1,6 @@
 from django.db import models
 
-# Create your models here.
+
 class APODImage(models.Model):
     copyright = models.CharField(max_length=255, blank=True, null=True)
     date = models.DateField()
@@ -10,3 +10,4 @@ class APODImage(models.Model):
     service_version = models.CharField(max_length=10)
     title = models.CharField(max_length=255)
     url = models.URLField()
+    image_bytes = models.BinaryField(blank=True, null=True)  # New field for image bytes
