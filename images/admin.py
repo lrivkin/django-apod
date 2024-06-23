@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import APODImage
+class APODImageAdmin(admin.ModelAdmin):
+    exclude = ('image_bytes',)
 
-# Register your models here.
+admin.site.register(APODImage, APODImageAdmin)
