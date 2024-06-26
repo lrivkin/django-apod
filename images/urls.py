@@ -1,6 +1,6 @@
 from django.urls import path
-from .views import APODImageAPIView
+from .views import APODImageDetailsAPIView
 
 urlpatterns = [
-    path('image/<str:date>/', APODImageAPIView.as_view(), name='apod-image-detail'),
+    path("<str:date>/", APODImageDetailsAPIView.as_view(), name="apod-image-detail"),
 ]
