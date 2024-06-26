@@ -10,4 +10,8 @@ class APODImage(models.Model):
     service_version = models.CharField(max_length=10)
     title = models.CharField(max_length=255)
     url = models.URLField()
-    image_bytes = models.BinaryField(blank=True, null=True)  # New field for image bytes
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f"{self.title} ({self.date})"
