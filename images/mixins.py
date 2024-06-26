@@ -4,7 +4,7 @@ import requests
 
 class APODImageAPIMixin:
     def fetch_apod_from_api(self, params):
-        api_url = f"https://api.nasa.gov/planetary/apod/"
+        api_url = "https://api.nasa.gov/planetary/apod/"
         params["api_key"] = settings.API_KEY
 
         try:

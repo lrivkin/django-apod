@@ -56,7 +56,7 @@ class APODImageDetailsAPIView(APODImageAPIMixin, generics.RetrieveAPIView):
 
             serializer = self.serializer_class(data=response_data)
             if serializer.is_valid():
-                serializer.save()  # Save the fetched data to your database
+                serializer.save()
                 return Response(serializer.data)
             else:
                 return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
