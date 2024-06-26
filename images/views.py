@@ -28,7 +28,13 @@ class APODImageDetailsAPIView(generics.RetrieveAPIView):
             api_url = f"https://api.nasa.gov/planetary/apod/?api_key={settings.API_KEY}"
             response = requests.get(api_url, params={"date": kwargs.get("date")})
 
-            response.raise_for_status()
+            try:
+                response.raise_for_status()
+            except requests.HTTPError:
+                return Response(
+                    {"error": "Object not found and API request failed"},
+                    status=status.HTTP_404_NOT_FOUND,
+                )
 
             serializer = self.serializer_class(data=response.json())
             if serializer.is_valid():
