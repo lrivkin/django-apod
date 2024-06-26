@@ -1,12 +1,9 @@
-# from django.http import HttpResponse
-from django.http import HttpResponse
-from django.shortcuts import render
 from django.conf import settings
 
 import requests
 import logging
 
-from rest_framework import generics, status, renderers
+from rest_framework import generics, status
 from rest_framework.response import Response
 
 from .models import APODImage
