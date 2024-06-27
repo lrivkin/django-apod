@@ -60,3 +60,7 @@ class APODImageDetailsAPIView(APODImageAPIMixin, generics.RetrieveAPIView):
                 return Response(serializer.data)
             else:
                 return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+class APODImageTagsView(generics.RetrieveAPIView):
+    pass

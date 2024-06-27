@@ -128,7 +128,8 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 LOG = logging.getLogger(__name__)
 logging.basicConfig(level=logging.DEBUG)
 
-API_KEY = "DEMO_KEY"
+NASA_API_KEY = "DEMO_KEY"
+HUGGING_FACE_API_KEY = ""
 
 REST_FRAMEWORK = {
     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
