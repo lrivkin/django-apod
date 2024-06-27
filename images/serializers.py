@@ -27,9 +27,3 @@ class APODImageSerializer(serializers.HyperlinkedModelSerializer):
             "hdurl",
             "tagsLink",
         ]
-
-
-class APODImageExplanationSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = APODImage
-        fields = ["explanation"]

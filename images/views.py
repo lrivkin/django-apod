@@ -9,7 +9,6 @@ from .mixins import APODImageAPIMixin
 
 from .models import APODImage, Tag
 from .serializers import (
-    APODImageExplanationSerializer,
     APODImageSerializer,
     TagSerializer,
 )
