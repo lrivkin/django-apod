@@ -9,6 +9,7 @@ class TagSerializer(serializers.ModelSerializer):
 
 
 class APODImageSerializer(serializers.HyperlinkedModelSerializer):
+    # NOTE: would probably prefer for this to be a hyperlinked field but ran out of time to actually get that working with the tags view
     tags = TagSerializer(many=True, read_only=True)
 
     class Meta:
