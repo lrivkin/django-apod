@@ -9,11 +9,7 @@ class TagSerializer(serializers.ModelSerializer):
 
 
 class APODImageSerializer(serializers.HyperlinkedModelSerializer):
-    tagsLink = serializers.HyperlinkedRelatedField(
-        view_name="apod-image-tags",
-        read_only=True,
-        many=True,
-    )
+    tags = TagSerializer(many=True, read_only=True)
 
     class Meta:
         model = APODImage
@@ -25,5 +21,5 @@ class APODImageSerializer(serializers.HyperlinkedModelSerializer):
             "title",
             "url",
             "hdurl",
-            "tagsLink",
+            "tags",
         ]
