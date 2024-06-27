@@ -1,8 +1,35 @@
 from rest_framework import serializers
-from .models import APODImage
+from .models import APODImage, Tag
 
 
-class APODImageSerializer(serializers.ModelSerializer):
+class TagSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Tag
+        fields = ["name"]
+
+
+class APODImageSerializer(serializers.HyperlinkedModelSerializer):
+    tagsLink = serializers.HyperlinkedRelatedField(
+        view_name="apod-image-tags",
+        read_only=True,
+        many=True,
+    )
+
     class Meta:
         model = APODImage
-        fields = "__all__"
+        fields = [
+            "copyright",
+            "date",
+            "explanation",
+            "media_type",
+            "title",
+            "url",
+            "hdurl",
+            "tagsLink",
+        ]
+
+
+class APODImageExplanationSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = APODImage
+        fields = ["explanation"]

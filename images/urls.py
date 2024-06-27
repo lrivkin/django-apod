@@ -11,7 +11,7 @@ urlpatterns = [
     path("random/", APODImageRandom.as_view(), name="apod-image-random"),
     path("<str:date>/", APODImageDetailsAPIView.as_view(), name="apod-image-detail"),
     path(
-        "<str:date>/tags",
+        "<str:date>/tags/",
         APODImageTagsView.as_view(),
         name="apod-image-tags",
     ),
