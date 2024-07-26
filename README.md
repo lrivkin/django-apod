@@ -1,5 +1,9 @@
 # django-apod
 
+## Prerequisites
+
+* [poetry](https://python-poetry.org/docs/#installation) installed
+
 ## Getting started
 
 Create a new file `apod/settings/local.py` as a copy of `apod/settings/local.py.tmpl`. You will need to fill in two API keys
@@ -12,6 +16,7 @@ Create a new file `apod/settings/local.py` as a copy of `apod/settings/local.py.
 ### Running the application locally
 
 ```
+poetry shell
 DJANGO_SETTINGS_MODULE=apod.settings.local python manage.py migrate
 DJANGO_SETTINGS_MODULE=apod.settings.local python manage.py runserver
 ```
